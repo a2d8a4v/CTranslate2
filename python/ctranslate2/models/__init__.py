@@ -5,8 +5,8 @@ and :class:`ctranslate2.Generator`.
 try:
     from ctranslate2._ext import (
         Wav2Vec2,
-        WavLM,
         Wav2Vec2Bert,
+        WavLM,
         Whisper,
         WhisperGenerationResult,
         WhisperGenerationResultAsync,

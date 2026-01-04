@@ -22,9 +22,9 @@ from ctranslate2.specs import (
     common_spec,
     model_spec,
     transformer_spec,
-    wavlm_spec,
     wav2vec2_spec,
     wav2vec2bert_spec,
+    wavlm_spec,
     whisper_spec,
 )
 
