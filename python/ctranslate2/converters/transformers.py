@@ -1155,7 +1155,9 @@ class WavLMLoader(BartLoader):
     def set_wavlm_encoder_layer(self, spec, encoder):
         self.set_common_layers(spec, encoder)
 
-        for layer_index, (layer_spec, layer) in enumerate(zip(spec.layer, encoder.layers)):
+        for layer_index, (layer_spec, layer) in enumerate(
+            zip(spec.layer, encoder.layers)
+        ):
             self.set_attention(
                 layer_spec.self_attention,
                 layer.self_attn,
@@ -1171,7 +1173,9 @@ class WavLMLoader(BartLoader):
             self.set_linear(layer_spec.ffn.linear_1, layer.fc2)
             self.set_layer_norm(layer_spec.ffn.layer_norm, layer.final_layer_norm)
 
-    def set_attention(self, spec, attention, self_attention=False, has_rel_attn_embed=False):
+    def set_attention(
+        self, spec, attention, self_attention=False, has_rel_attn_embed=False
+    ):
         split_layers = [common_spec.LinearSpec() for _ in range(3)]
         self.set_linear(split_layers[0], attention.q_proj)
         self.set_linear(split_layers[1], attention.k_proj)
