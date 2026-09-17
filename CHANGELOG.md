@@ -4,9 +4,67 @@
 
 ### Fixes and improvements
 
+
+## [v4.8.2](https://github.com/OpenNMT/CTranslate2/releases/tag/v4.8.2) (2026-08-31)
+
+### Fixes and improvements
+
+* Import Python converters and specs lazily to avoid loading torch for inference-only use (#2080) by [@Anai-Guo](https://github.com/Anai-Guo)
+* Fix out-of-bounds reads in StorageView index validation (#2073) by [@jordimas](https://github.com/jordimas), reported by Nathan Keys (Halo Forge Labs)
+* Update cxxopts to v3.3.1 for GCC 15 compatibility (#2084) by [@bekard](https://github.com/bekard)
+* Validate model variable sizes before allocation (#2091) by [@jordimas](https://github.com/jordimas), reported by Hyeonbell
+* Check StorageView reserve byte size before allocation (#2094) by [@infinityscroll](https://github.com/infinityscroll)
+* Remove the runtime dependency on setuptools (#2096) by [@Ravencentric](https://github.com/Ravencentric)
+
+## [v4.8.1](https://github.com/OpenNMT/CTranslate2/releases/tag/v4.8.1) (2026-07-03)
+
+### New features
+
+* Support for Gemma4 12B dense model (#2060) by [@jordimas](https://github.com/jordimas)
+
+### Fixes and improvements
+
+* Harden legacy converter checkpoint loading (#2036) by [@igorsantosgrueiro](https://github.com/igorsantosgrueiro)
+* Fix model load heap overflow (#2068) by [@jordimas](https://github.com/jordimas), reported by Chegne Eu Joe (Project Umbra)
+* Fix process-killing integer division by zero when Whisper align() gets a window with no frames (#2065) by [@MAkcanca](https://github.com/MAkcanca)
+* CI/CD compilation fixes for Windows (#2069) by [@jordimas](https://github.com/jordimas)
+* Optimize attention softmax buffer reuse (#2066) by [@jordimas](https://github.com/jordimas)
+
+## [v4.8.0](https://github.com/OpenNMT/CTranslate2/releases/tag/v4.8.0) (2026-06-06)
+
+### New features
+
+* Add support for Google T5Gemma2 (#2058) by [@jordimas](https://github.com/jordimas)
+* Enables PACKED_GEMM by default for Intel MKL to improve Intel CPU performance (#2055) by [@jordimas](https://github.com/jordimas)
+
+### Fixes and improvements
+
+* Upgrade Thrust submodule from 1.12.0 to CCCL 2.7.0 (#2062) by [@jordimas](https://github.com/jordimas)
+* Adopt latest BS_thread_pool library version v5.1.0 (#2053) by [@3manifold](https://github.com/3manifold)
+* Upgrade CI system dependencies and reduce build time (#2056) by [@jordimas](https://github.com/jordimas)
+* Fix PyPI publish: download wheels to dist/ to avoid directory hash error (#2050) by [@jordimas](https://github.com/jordimas)
+* Fix flaky transformers_wav2vec2 test (#1996) by [@3manifold](https://github.com/3manifold)
+
+## [v4.7.2](https://github.com/OpenNMT/CTranslate2/releases/tag/v4.7.2) (2026-05-18)
+
+### New features
+
+* Gemma4 support for dense model (#2048) by [@jordimas](https://github.com/jordimas)
+
+## Fixes and improvements
+
+* Gemma 3 model conversion fixes (#2037) by [@jordimas](https://github.com/jordimas)
+* Update source ROCM version from 7.2 to 7.2.1 (#2030) by [@racedale](https://github.com/racedale)
+* Free curand states before the thread is destroyed (#1912) by [@no1d](https://github.com/no1d)
+
+
 ## [v4.7.1](https://github.com/OpenNMT/CTranslate2/releases/tag/v4.7.1) (2026-02-04)
 
-* Fix Windows build (#2007) [@sssshhhhhh](https://github.com/sssshhhhhh)
+## Fixes and improvements
+
+* Fix Windows build (#2007) by [@sssshhhhhh](https://github.com/sssshhhhhh)
+
+## [v4.7.0](https://github.com/OpenNMT/CTranslate2/releases/tag/v4.7.0) (2026-02-03)
 
 ### New features
 
